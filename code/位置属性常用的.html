@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- offset翻译过来就是偏移量，我们使用offset系列相关属性可以得到该元素位置(偏移量) 、大小等
+    1.获得元素距离带有定位父元素位置 2.获得元素自身的大小(宽度高度)3.注意：返回的数值都不带单位 -->
+     <div class="father">
+        <div class="son"></div>
+     </div>
+     <script>
+         var father=document.querySelector(".father");
+         var son=document.querySelector('.son')
+        //   可以得到元素的偏移量 位置 返回的不带单位的数值
+        console.log(father.offsetTop) //100
+        console.log(father.offsetLeft)  //100
+        
+        // 它以带有定位的父亲为准，如果没有父亲或者父亲没有定位，则以body为准
+        console.log(son.offsetTop) //100
+        console.log(son.offsetLeft)  //150 50+100 //父元素没有定位的时候一直找到body
+        //可以得到元素的大小，宽度和高度
+
+     </script>
+</body>
+</html>
