@@ -18,7 +18,7 @@ $(function(){
   
 });
 
-// 获取用户信息封装
+// 获取用户信息封装必须是全局的
 function  getUserInfo(){
     $.ajax({
         type:'get',
@@ -30,7 +30,7 @@ function  getUserInfo(){
         // },
         success:function(res){
             //token可能24小时就失效了，所以需要重新登录
-            console.log(res);
+            // console.log(res);
             if(res.status!=0){
                 //判断用户是否查询成功
                 return layui.layer.msg(res.message)
