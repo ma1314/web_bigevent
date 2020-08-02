@@ -18,7 +18,7 @@ $.ajaxPrefilter(function(options){
     options.complete=function(res){
     //   console.log(444);
             var data=res.responseJSON;
-            console.log(data);
+            // console.log(data);
             if(data.status ==1 && data.message=='身份认证失败！'){
             //    删除tokan
                 localStorage.removeItem("token")
